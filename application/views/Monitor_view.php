@@ -21,7 +21,9 @@
 	var yd = 260;
 	var yd2 = 260;
 	var st=0;
-	var b=0;
+	var pos1=[0,1,2];
+	var pos2=[2,2,2];
+	var b=1;
 	var c=2;
 
 	
@@ -84,8 +86,9 @@
 	/*------ kotak -------*/
 
 	st=1;
-	b=1;
-	c=2;
+
+	
+	
 
 	for (var a = 0; a <=2; a++) {
 		for (var i = 0; i<=6; i++) {	
@@ -97,7 +100,9 @@
 			ctx.fillStyle="#ffffff";	
 			}				
 		}
-		
+		else {
+			ctx.fillStyle="#ffffff";	
+			}		
 		ctx.fillRect(x,y,w,h);
 		ctx.strokeRect(x,y,w,h);
 		x=x+97;
@@ -126,7 +131,7 @@
 			}
 			
 		}
-		c=c+2;
+		
 		x=50;
 		y=y+100;
 
