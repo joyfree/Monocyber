@@ -20,7 +20,22 @@
 
 		public function status()
 		{
-			$status=$this->Monitor_model->show()->row();
+			$data=$this->Monitor_model->show()->result();
+			foreach ($data as $stat) {
+				$a=$stat->status;
+				echo $a;
+
+			}
+			foreach ($data as $stat) {
+				$b=$stat->pos1;
+				echo $b;
+
+			}
+			foreach ($data as $stat) {
+				$c=$stat->pos2;
+				echo $c;
+
+			}
 		}
 	}
 
