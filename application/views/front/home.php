@@ -12,7 +12,7 @@
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a  href="#">Monitor</a>
+          <li><a  href="<?=base_url();?>monitor">Monitor</a>
          <!--  <ul>
             <li><a href="pages/gallery.html">Gallery</a></li>
             <li><a href="pages/full-width.html">Full Width</a></li>
