@@ -140,6 +140,9 @@
 	
 
 	
-	
+	/*pertama buat koneksi
+	 - buat file php
+	 - dua isi variable
+	 - console log*/
 	
 </script>
