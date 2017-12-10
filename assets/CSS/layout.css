@@ -263,9 +263,8 @@ input:focus, textarea:focus, *:required:focus{border-color:#E03F3F;}
 .testimonials article .starating li .fa{color:#D4AF37;}
 .testimonials article .starating li .fa.neutral{color:#D7D7D7;}
 
-.services article{color:inherit; background-color:#FFFFFF;}
-.services article:hover{color:#FFFFFF; background-color:transparent;}
-.services article:hover a{color:inherit;}
+.services article{color:black background-color:#FFFFFF;}
+
 
 .elements article i{border-color:#D7D7D7;}
 .elements article:hover i{color:#FFFFFF; background-color:#E03F3F; border-color:#E03F3F;}

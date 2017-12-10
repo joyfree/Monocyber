@@ -69,47 +69,46 @@
       <h6 class="heading">Our Team</h6>
       <p></p>
     </div>
-    <ul class="nospace group services">
-     <li class="one_third first">
-      <article class="infobox" >
-        <h6 class="heading">Job : </h6>
-        <h6>Name : </h6>
-        <h6>address : </h6>
-        <h6>old : </h6>
-        <h6>motivation : </h6>
-        <img style="width: auto; height: auto;" src="<?=base_url();?>assets/img/background/Background_Box2.jpg">
-      </article>
-    </li>
-    <li class="one_third">
-      <article class="infobox">
-        <h6 class="heading">Job : </h6>
-        <h6>Name : </h6>
-        <h6>address : </h6>
-        <h6>old : </h6>
-        <h6>motivation : </h6>
-        <img style="width: auto; height: auto;" src="<?=base_url();?>assets/img/background/Background_Buket.jpg">
-      </article>
-    </li>
-    <li class="one_third">
-      <article class="infobox">
-        <h6 class="heading">Job : </h6>
-        <h6>Name : </h6>
-        <h6>address : </h6>
-        <h6>old : </h6>
-        <h6>motivation : </h6>
-        <img style="width: auto; height: auto;" src="<?=base_url();?>assets/img/background/Background_FC.jpg">
-      </article>
-    </li>
-    <li class="one_third first">
-      <article class="infobox">
-        <h6 class="heading">Job : </h6>
-        <h6>Name : </h6>
-        <h6>address : </h6>
-        <h6>old : </h6>
-        <h6>motivation : </h6>
-        <img style="width: auto; height: auto;"  src="<?=base_url();?>assets/img/background/Background_SF.jpg">
-      </article>
-    </li>
+    <ul class="nospace  services">
+     <?php
+     $i=1;
+     foreach ($karyawan as $data) {
+      if($i > 3){
+        $i =1;
+      }
+      if($i== 1){
+        ?>
+        <li class="one_third first" style="background-color: white; " >
+          <article class="infobox"  >
+            <h6 class="heading" style="font-size: 15px;">Nama: <?=$data->nama?></h6>
+            <h6 style="font-size: 15px;">NIP :<?=$data->nip?></h6>
+            <h6 style="font-size: 15px;">Jabatan :<?=$data->jabatan?> </h6>
+            <h6 style="font-size: 15px;">T. Lahir :<?=$data->tanggal_lahir?></h6>
+
+            <img style="width: auto; height: auto;" src="<?=base_url();?>assets/img/background/Background_Box2.jpg">
+          </article>
+        </li>
+        <?php
+      }else{
+        ?>
+        <li class="one_third" style="background-color: white; ">
+          <article class="infobox">
+            <h6 class="heading" style="font-size: 15px;">Nama: <?=$data->nama?></h6>
+            <h6 style="font-size: 15px;">NIP :<?=$data->nip?></h6>
+            <h6 style="font-size: 15px;">Jabatan :<?=$data->jabatan?> </h6>
+            <h6 style="font-size: 15px;">T. Lahir :<?=$data->tanggal_lahir?></h6>
+
+            <img style="width: auto; height: auto;" src="<?=base_url();?>assets/img/background/Background_Buket.jpg">
+          </article>
+        </li>
+        <?php
+      }
+      $i = $i + 1;
+
+    }
+
+    ?>
+
   </ul>
   <!-- ################################################################################################ -->
   <!-- / main body -->
@@ -146,26 +145,23 @@
         <article class="group">
           <div class="one_half">
             <h3 class="heading font-x1">Misi</h3>
-            <p>Menjalankan bisnis kelistrikan dan bidang lain yang terkait, berorientasi pada kepuasan pelanggan, anggota perusahaan dan pemegang saham. <br>
-              Menjadikan tenaga listrik sebagai media untuk meningkatkan kualitas kehidupan masyarakat.<br>
-              Mengupayakan agar tenaga listrik menjadi pendorong kegiatan ekonomi.<br>
-              Menjalankan kegiatan usaha yang berwawasan lingkungan.</p>
+            <p><?=$visimisi->misi?></p>
 
-            </div>
-          </article>
-        </li>
-        <li class="one_half">
-          <article class="group">
-            <div class="one_half first"><a href="#"><img src="images/demo/320x240.png" alt=""></a></div>
-            <div class="one_half">
-              <h3 class="heading font-x1">Visi</h3>
-              <p>Diakui sebagai Perusahaan Kelas Dunia yang Bertumbuh kembang, Unggul dan terpercaya dengan bertumpu pada Potensi Insani.</p>
-              
-            </div>
-          </article>
-        </li>
-      </ul>
-      <!-- ################################################################################################ -->
-      <div class="clear"></div>
-    </section>
-  </div>
+          </div>
+        </article>
+      </li>
+      <li class="one_half">
+        <article class="group">
+          <div class="one_half first"><a href="#"><img src="images/demo/320x240.png" alt=""></a></div>
+          <div class="one_half">
+            <h3 class="heading font-x1">Visi</h3>
+            <p><?=$visimisi->visi?></p>
+
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </section>
+</div>
