@@ -4,7 +4,7 @@
 	/**
 	* 
 	*/
-	class Monitor extends CI_Controller
+	class Getinfo extends CI_Controller
 	{
 		
 		function __construct()
@@ -13,11 +13,8 @@
 			$this->load->model('Monitor_model');
 		}
 
-		public function index(){
-			$this->load->view('Monitor_view');
-		}
-
-		public function getinfo(){
+		public function status()
+		{
 			$data=$this->Monitor_model->show()->result();
 			foreach ($data as $stat) {
 				$a=$stat->status;
@@ -35,7 +32,5 @@
 
 			}
 		}
-
 	}
-
 ?>

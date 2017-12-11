@@ -4,7 +4,13 @@
 </div>
 <script type="text/javascript">
 
+window.onload = function () {
+	// body...
 
+
+	function box() {
+	
+	
 	var c = document.getElementById("map");
 	var ctx = c.getContext("2d");
 	var x = 50;
@@ -25,6 +31,7 @@
 	var pos2=[2,2,2];
 	var b=1;
 	var c=2;
+	var z=[2,1];
 
 	
 	ctx.moveTo(30,50);
@@ -86,7 +93,11 @@
 	/*------ kotak -------*/
 
 	st=1;
-
+	for (var u = 0; u <=1 ; u++) {
+				
+	}
+	b=1;
+	c=4;
 	
 	
 
@@ -136,9 +147,17 @@
 		y=y+100;
 
 	}
-
-	
-
+	}
+	 var xmlhttp = new XMLHttpRequest();
+	 xmlhttp.onreadystatechange = function () {
+	 	if(this.readyState==4 && this.status==200){
+	 		console.log(http.response);
+	 	}
+	 }
+	 xmlhttp.open("GET","<?php echo site_url('Monitor/getinfo');?>",true);
+	 xmlhttp.send();
+	box();
+}
 	
 	/*pertama buat koneksi
 	 - buat file php
