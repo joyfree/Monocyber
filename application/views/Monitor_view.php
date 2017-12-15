@@ -1,3 +1,7 @@
+<head>
+	<title>Test</title>
+	<script src="<?php echo base_url();?>jquery-3.2.1.js"></script>
+</head>
 <div>
 	<h1 id="coba">JUDUL</h1>
 	<canvas id="map" height="450" width="750" style="border-style:solid; border-width: 1px; margin-left: 320px;"></canvas>
@@ -148,14 +152,15 @@ window.onload = function () {
 
 	}
 	}
-	 var xmlhttp = new XMLHttpRequest();
+	 /*var xmlhttp = new XMLHttpRequest();
 	 xmlhttp.onreadystatechange = function () {
 	 	if(this.readyState==4 && this.status==200){
 	 		console.log(http.response);
 	 	}
 	 }
 	 xmlhttp.open("GET","<?php echo site_url('Monitor/getinfo');?>",true);
-	 xmlhttp.send();
+	 xmlhttp.send();*/
+	 
 	box();
 }
 	
