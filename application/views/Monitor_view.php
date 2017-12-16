@@ -1,6 +1,6 @@
 <head>
 	<title>Test</title>
-	<script src="<?php echo base_url();?>jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.2.1.js"></script>
 </head>
 <div>
 	<h1 id="coba">JUDUL</h1>
@@ -33,8 +33,8 @@ window.onload = function () {
 	var st=0;
 	var pos1=[0,1,2];
 	var pos2=[2,2,2];
-	var b=1;
-	var c=2;
+	var b=[1,1,1];
+	var c=[0,1,2];
 	var z=[2,1];
 
 	
@@ -99,10 +99,7 @@ window.onload = function () {
 	st=1;
 	for (var u = 0; u <=1 ; u++) {
 				
-	}
-	b=1;
-	c=4;
-	
+	}	
 	
 
 	for (var a = 0; a <=2; a++) {
@@ -152,16 +149,16 @@ window.onload = function () {
 
 	}
 	}
-	 /*var xmlhttp = new XMLHttpRequest();
-	 xmlhttp.onreadystatechange = function () {
-	 	if(this.readyState==4 && this.status==200){
-	 		console.log(http.response);
-	 	}
-	 }
-	 xmlhttp.open("GET","<?php echo site_url('Monitor/getinfo');?>",true);
-	 xmlhttp.send();*/
-	 
+
 	box();
+	function pool(){
+		$.post("<?php echo base_url('Getinfo/status');?>",function(data){
+		// var myData =JSON.parse(this.data);
+		console.log(data);
+		setTimeout(pool,2000);
+		});	
+	}
+	pool();
 }
 	
 	/*pertama buat koneksi
