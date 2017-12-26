@@ -14,7 +14,9 @@
 		}
 
 		public function index(){
-			$this->load->view('Monitor_view');
+			$data['koordinat'] = $this->Monitor_model->showid();
+			$this->load->view('Monitor_view',$data);
+			
 		}
 
 		public function getinfo(){

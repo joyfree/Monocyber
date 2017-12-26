@@ -36,6 +36,7 @@ window.onload = function () {
 	var b=[1,1,1];
 	var c=[0,1,2];
 	var z=[2,1];
+	
 
 	
 	ctx.moveTo(30,50);
