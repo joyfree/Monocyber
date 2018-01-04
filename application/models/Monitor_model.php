@@ -22,6 +22,7 @@
 		function GetMonitorAdmin(){
 			$this->db->where('id', 2);
 			return $this->db->get('admin')->row();
+			
 		}
 		function showStat()
 		{
@@ -49,4 +50,4 @@
 		}
 	}
 
-?>
+	?>
