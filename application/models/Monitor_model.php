@@ -18,6 +18,11 @@
 
 			return $this->db->get()->result();		
 		}
+
+		function GetMonitorAdmin(){
+			$this->db->where('id', 2);
+			return $this->db->get('admin')->row();
+		}
 		function showStat()
 		{
 			$this->db->select('status');
@@ -40,6 +45,7 @@
 			$this->db->where('status',1);
 
 			return $this->db->get();		
+
 		}
 	}
 

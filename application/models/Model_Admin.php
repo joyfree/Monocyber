@@ -42,6 +42,7 @@
 			return $this->db->get('tabel_visimisi')->row();
 		}
 		function GetAdmin(){
+			$this->db->where('id', 1);
 			return $this->db->get('admin')->row();
 		}
 	}
