@@ -14,9 +14,43 @@
 		}
 
 		public function index(){
-			$data['koordinat'] = $this->Monitor_model->showid();
+			if($this->session->userdata('monitor') == true){
+				$data['koordinat'] = $this->Monitor_model->showid();
 			$this->load->view('Monitor_view',$data);
+		}else{
+			$this->login();
+		}
 			
+		}
+		public function login(){
+			if($this->session->userdata('monitor') == true){
+				$this->index();
+			}else{
+				$data['content'] = 'monitor/login';
+				$this->load->view('monitor/template_login',$data);
+			}
+		}
+		public function login_auth(){
+			$data = $this->input->post();
+			$match = $this->Monitor_model->GetMonitorAdmin();
+			if($data['username'] == $match->username){
+				if(md5($data['password']) == $match->password){
+					$account['monitor'] = true;
+					$this->session->set_userdata($account);
+					redirect('Monitor/index','refresh');
+				}else{
+					$this->session->set_flashdata('flash','Password Anda Salah');
+				redirect('Monitor/login','refresh');
+				}
+			}else{
+				$this->session->set_flashdata('flash','username Anda Salah');
+				redirect('Monitor/login','refresh');
+			}
+			// print_r($match->username);
+		}
+		public function logout(){
+			session_destroy();
+			redirect('Monitor','refresh');
 		}
 
 		public function getinfo(){

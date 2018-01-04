@@ -12,7 +12,7 @@
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a  href="<?=base_url();?>monitor">Monitor</a>
+          <li><a  href="<?=base_url();?>monitor/login">Monitor</a>
           <li><a  href="<?=base_url();?>Admin">Admin</a>
          <!--  <ul>
             <li><a href="pages/gallery.html">Gallery</a></li>
@@ -54,7 +54,7 @@
       <blockquote style="font-size: 20px;">Listrik untuk Kehidupan yang Lebih Baik</blockquote>
 
       <p></p>
-      <footer><a class="btn" href="#">Monitor</a></footer>
+      <!-- <footer><a class="btn" href="#">Monitor</a></footer> -->
     </article>
     <!-- ################################################################################################ -->
   </div>
