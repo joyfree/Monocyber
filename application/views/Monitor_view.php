@@ -112,7 +112,6 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="<?=base_url();?>assets/JS/jquery.mobilemenu.js"></script>
 <script src="<?=base_url();?>assets/JS/jquery.flexslider-min.js"></script>
 </body>
->>>>>>> 8fca0f2c12604b7fb77b21d28e06acff8a84c33f
 <script type="text/javascript">
 
 window.onload = function () {
