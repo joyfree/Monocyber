@@ -4,7 +4,7 @@
 </head>
 <div>
 	<h1 id="coba">JUDUL</h1>
-	<h1 id="coba"><a href="<?=base_url();?>Monitor/logout">tombol</a> logoutmu</h1>
+	<h1 id="x"><a href="<?=base_url();?>Monitor/logout">tombol</a> logoutmu</h1>
 	<canvas id="map" height="450" width="750" style="border-style:solid; border-width: 1px; margin-left: 320px;"></canvas>
 	<p id="t"></p>
 </div>
@@ -196,7 +196,7 @@ window.onload = function () {
 	}
 	function refresh(){
 		setTimeout(function(){
-			ctx.location.reload();
+			location.reload();
 		},4000);
 		
 	}

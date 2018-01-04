@@ -15,8 +15,8 @@
 
 		public function index(){
 			if($this->session->userdata('monitor') == true){
-				$data['koordinat'] = $this->Monitor_model->showid();
-			$this->load->view('Monitor_view',$data);
+				
+			$this->load->view('Monitor_view');
 		}else{
 			$this->login();
 		}
