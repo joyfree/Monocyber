@@ -5,15 +5,15 @@
 <div>
 	<h1 id="coba">JUDUL</h1>
 	<canvas id="map" height="450" width="750" style="border-style:solid; border-width: 1px; margin-left: 320px;"></canvas>
+	<p id="t"></p>
 </div>
 <script type="text/javascript">
 
 window.onload = function () {
 	// body...
+	poolStat();
 
-
-	function box() {
-	
+	var myData;
 	
 	var c = document.getElementById("map");
 	var ctx = c.getContext("2d");
@@ -30,14 +30,9 @@ window.onload = function () {
 	var xd2 = 255;
 	var yd = 260;
 	var yd2 = 260;
-	var st=0;
-	var pos1=[0,1,2];
-	var pos2=[2,2,2];
-	var b=[1,1,1];
-	var c=[0,1,2];
-	var z=[2,1];
-
 	
+	
+	function box() {
 	ctx.moveTo(30,50);
 	ctx.lineTo(720,50);
 	ctx.lineWidth = 2;
@@ -96,25 +91,69 @@ window.onload = function () {
 
 	/*------ kotak -------*/
 
-	st=1;
-	for (var u = 0; u <=1 ; u++) {
-				
-	}	
-	
+	var b=[2,1,2];
+	var z=[3,5,6];
+	var st=[true,false];
+	var d = true;
 
-	for (var a = 0; a <=2; a++) {
-		for (var i = 0; i<=6; i++) {	
-		if (st==1) {
-			if(a==b && i==c){
-				ctx.fillStyle="#ff0000";	
-			}
-			else {
-			ctx.fillStyle="#ffffff";	
-			}				
+	
+	for (var a=0; a<=2; a++) {
+		for (var i = 0; i<=6; i++) {
+		if(b[0]==a && z[0]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[1]==a && z[1]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[2]==a && z[2]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[3]==a && z[3]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[4]==a && z[4]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[5]==a && z[5]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[6]==a && z[6]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[7]==a && z[7]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[8]==a && z[8]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[9]==a && z[9]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[10]==a && z[10]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[11]==a && z[11]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[12]==a && z[12]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[13]==a && z[13]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[14]==a && z[14]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[15]==a && z[15]==i){	
+			ctx.fillStyle="#ff0000";		
+		}
+		else if(b[16]==a && z[16]==i){	
+			ctx.fillStyle="#ff0000";		
 		}
 		else {
-			ctx.fillStyle="#ffffff";	
+				ctx.fillStyle="#ffffff";	
 			}		
+									
 		ctx.fillRect(x,y,w,h);
 		ctx.strokeRect(x,y,w,h);
 		x=x+97;
@@ -141,29 +180,48 @@ window.onload = function () {
 				w = 20;
 				h = 45;
 			}
-			
 		}
 		
 		x=50;
 		y=y+100;
-
 	}
 	}
 
 	box();
-	function pool(){
-		$.post("<?php echo base_url('Getinfo/status');?>",function(data){
-		// var myData =JSON.parse(this.data);
-		console.log(data);
-		setTimeout(pool,2000);
-		});	
-	}
-	pool();
+
+	/*server pooling ambil data dari database setiap sekian detik*/
+	function poolStat(){
+		function cek(){
+			$.post("<?php echo base_url('Getinfo/status');?>",function(data){
+			var myData1=JSON.parse(data);
+			var status = myData1.a;
+			var pos1 = myData1.b;
+			var pos2 = myData1.c;
+			function getStat(value,index){
+				var an = [value.status].join();
+				return an;
+			}
+			function getPos1(value,index){
+				var an = [value.pos1].join();
+				return an;
+			}
+			function getPos2(value,index){
+				var an = [value.pos2].join();
+				return an;
+			}
+			var pool1 = status.map(getStat);
+			pool1 = pool1.map(Number);
+			var pool2 = pos1.map(getPos1);
+			pool2 = pool2.map(Number);
+			var pool3 = pos2.map(getPos2);
+			pool3 = pool3.map(Number);
+			
+			setTimeout(cek,2000);	
+			});	
+		}
+		cek();
+	}	
+
 }
-	
-	/*pertama buat koneksi
-	 - buat file php
-	 - dua isi variable
-	 - console log*/
 	
 </script>
