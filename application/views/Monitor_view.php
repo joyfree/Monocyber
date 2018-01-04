@@ -12,9 +12,14 @@
 window.onload = function () {
 	// body...
 	poolStat();
-
-	var myData;
 	
+
+	}
+	
+			/*server pooling ambil data dari database setiap sekian detik*/
+	function box(data1,data2){
+	var b=data1;
+	var z=data2;
 	var c = document.getElementById("map");
 	var ctx = c.getContext("2d");
 	var x = 50;
@@ -32,8 +37,6 @@ window.onload = function () {
 	var yd2 = 260;
 
 	
-	
-	function box() {
 	ctx.moveTo(30,50);
 	ctx.lineTo(720,50);
 	ctx.lineWidth = 2;
@@ -50,6 +53,7 @@ window.onload = function () {
 		ctx.stroke();
 		xl=xl+97;	
 	}
+
 
 	/*------ garis belok atas -----*/
 	for (var i = 0; i <= 3; i++) {
@@ -88,14 +92,7 @@ window.onload = function () {
 		
 	}
 	
-
-
-	/*------ kotak -------*/
-
-	var b=[2,1,2];
-	var z=[3,5,6];
-	var st=[true,false];
-	var d = true;
+		/*------ kotak -------*/
 
 	
 	for (var a=0; a<=2; a++) {
@@ -186,11 +183,28 @@ window.onload = function () {
 		x=50;
 		y=y+100;
 	}
+
+	
+	
+}
+	
+	function reset(){
+		var c = document.getElementById("map");
+		var ctx = c.getContext("2d");
+		ctx.clearRect(0,0,ctx.lenght,ctx.width);
+	}
+	function refresh(){
+		setTimeout(function(){
+			ctx.location.reload();
+		},4000);
+		
+	}
+	function drawset(data1,data2){
+		box(data1,data2);
+		reset();
+/*		setTimeout(drawset,2000);*/
 	}
 
-	box();
-
-	/*server pooling ambil data dari database setiap sekian detik*/
 	function poolStat(){
 		function cek(){
 			$.post("<?php echo base_url('Getinfo/status');?>",function(data){
@@ -198,10 +212,10 @@ window.onload = function () {
 			var status = myData1.a;
 			var pos1 = myData1.b;
 			var pos2 = myData1.c;
-			function getStat(value,index){
+			/*function getStat(value,index){
 				var an = [value.status].join();
 				return an;
-			}
+			}*/
 			function getPos1(value,index){
 				var an = [value.pos1].join();
 				return an;
@@ -210,19 +224,20 @@ window.onload = function () {
 				var an = [value.pos2].join();
 				return an;
 			}
-			var pool1 = status.map(getStat);
-			pool1 = pool1.map(Number);
+			/*var pool1 = status.map(getStat);
+			pool1 = pool1.map(Number);*/
 			var pool2 = pos1.map(getPos1);
 			pool2 = pool2.map(Number);
 			var pool3 = pos2.map(getPos2);
 			pool3 = pool3.map(Number);
-			
+			box(pool2,pool3);
+			refresh();
+			console.log(b);
+			console.log(z);
 			setTimeout(cek,2000);	
 			});	
 		}
 		cek();
-	}	
+	}
 
-}
-	
 </script>

@@ -22,13 +22,14 @@
 		{
 			$this->db->select('status');
 			$this->db->from('axis');
-
+			$this->db->where('status',1);
 			return $this->db->get();		
 		}
 		function showPos1()
 		{
 			$this->db->select('pos1');
 			$this->db->from('axis');
+			$this->db->where('status',1);
 
 			return $this->db->get();		
 		}
@@ -36,6 +37,7 @@
 		{
 			$this->db->select('pos2');
 			$this->db->from('axis');
+			$this->db->where('status',1);
 
 			return $this->db->get();		
 		}
