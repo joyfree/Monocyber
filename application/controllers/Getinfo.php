@@ -15,25 +15,33 @@
 
 		public function status()
 		{
-			$data=$this->Monitor_model->show()->result();
-			foreach ($data as $stat) {
-				$a=$stat->status;
-			}
-			 foreach ($data as $stat) {
-			 	$b=$stat->pos1;
-			 }
-			 foreach ($data as $stat) {
-			 	$c=$stat->pos2;
-			}
-
-			$mystat=[$a,$b,$c];
-			foreach ($mystat as $key) {
-				$myJson=json_encode($mystat);
-				echo $myJson;
-			}
+			$data['a']=$this->Monitor_model->showStat()->result();
+			$data['b']=$this->Monitor_model->showPos1()->result();
+			$data['c']=$this->Monitor_model->showPos2()->result();
+			echo json_encode($data);
 			
 		}
-
+		public function pos1()
+		{
+			$data=$this->Monitor_model->showPos1()->result();
+			 /*foreach ($data as $stat) {
+			 	$b=$stat->pos1;
+			 	echo $b;
+			 }*/
+			 echo json_encode($data);
+		}
+		public function pos2()
+		{
+			$data=$this->Monitor_model->showPos2()->result();
+			/*foreach ($data as $stat) {
+			 	$c=$stat->pos2;
+			 	echo $c;
+			}*/
+			echo json_encode($data);	
+			
+		}
+			
+		
 
 	}
 

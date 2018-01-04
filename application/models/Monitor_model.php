@@ -18,9 +18,32 @@
 
 			return $this->db->get()->result();		
 		}
+<<<<<<< HEAD
 		function GetMonitorAdmin(){
 			$this->db->where('id', 2);
 			return $this->db->get('admin')->row();
+=======
+		function showStat()
+		{
+			$this->db->select('status');
+			$this->db->from('axis');
+
+			return $this->db->get();		
+		}
+		function showPos1()
+		{
+			$this->db->select('pos1');
+			$this->db->from('axis');
+
+			return $this->db->get();		
+		}
+		function showPos2()
+		{
+			$this->db->select('pos2');
+			$this->db->from('axis');
+
+			return $this->db->get();		
+>>>>>>> f4ebfd492fea5d9b975df0b474274c9c8b7d9b3f
 		}
 	}
 
