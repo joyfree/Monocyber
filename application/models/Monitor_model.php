@@ -11,12 +11,12 @@
 			$this->load->database();
 		}
 
-		function show()
+		function showid()
 		{
 			$this->db->select('*');
 			$this->db->from('axis');
 
-			return $this->db->get();		
+			return $this->db->get()->result();		
 		}
 		function showStat()
 		{

@@ -13,6 +13,7 @@
         <ul class="clear">
           <li class="active"><a href="index.html">Home</a></li>
           <li><a  href="<?=base_url();?>monitor">Monitor</a>
+          <li><a  href="<?=base_url();?>Admin">Admin</a>
          <!--  <ul>
             <li><a href="pages/gallery.html">Gallery</a></li>
             <li><a href="pages/full-width.html">Full Width</a></li>
@@ -85,7 +86,7 @@
             <h6 style="font-size: 15px;">Jabatan :<?=$data->jabatan?> </h6>
             <h6 style="font-size: 15px;">T. Lahir :<?=$data->tanggal_lahir?></h6>
 
-            <img style="width: auto; height: auto;" src="<?=base_url();?>assets/img/background/Background_Box2.jpg">
+            <img style="width: 250px; height: 250px;" src="<?=base_url();?>assets/img/<?=$data->foto?>">
           </article>
         </li>
         <?php
@@ -98,7 +99,7 @@
             <h6 style="font-size: 15px;">Jabatan :<?=$data->jabatan?> </h6>
             <h6 style="font-size: 15px;">T. Lahir :<?=$data->tanggal_lahir?></h6>
 
-            <img style="width: auto; height: auto;" src="<?=base_url();?>assets/img/background/Background_Buket.jpg">
+            <img style="width: 250px; height: 250px;" src="<?=base_url();?>assets/img/<?=$data->foto?>">
           </article>
         </li>
         <?php

@@ -30,6 +30,7 @@ window.onload = function () {
 	var xd2 = 255;
 	var yd = 260;
 	var yd2 = 260;
+
 	
 	
 	function box() {

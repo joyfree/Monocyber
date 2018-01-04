@@ -16,6 +16,10 @@
 			$this->db->select('*');
 			return $this->db->get('karyawan')->result();		
 		}
+		function GetDataKaryawan($no){
+			$this->db->where('no', $no);
+			return $this->db->get('karyawan')->result();
+		}
 		function add_karyawan($data){
 			return $this->db->insert('karyawan', $data);
 		}
@@ -29,6 +33,10 @@
 		function edit_visimisi($data){
 			$this->db->where('no', 1);
 			return $this->db->update('tabel_visimisi', $data);
+		}
+		function edit_karyawan($data){
+			$this->db->where('no', $data['no']);
+			return $this->db->update('karyawan', $data);
 		}
 		function GetVisiMisi(){
 			return $this->db->get('tabel_visimisi')->row();

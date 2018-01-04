@@ -129,7 +129,7 @@
                               <td class=" "><?=$karyawan->jabatan?><i class="success fa fa-long-arrow-up"></i></td>
                               <td class=" "><?=$karyawan->tanggal_lahir?></td>
 
-                              <td class=" last"><a href="#">View</a>
+                              <td class=" last"><a class="btn btn-primary" href="<?=base_url();?>Admin/beranda/form_editKaryawan/<?=$karyawan->no?>">Edit</a>
                               </td>
                             </tr>
                             <?php
