@@ -50,8 +50,11 @@
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
 
-              <ul class="nav navbar-nav navbar-right">
-           
+               <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                 <a href="<?=base_url()?>Home"><i class="fa fa-sign-out pull-right"></i> back Home</a>
+                 
+                </li>
 
                 
               </ul>
